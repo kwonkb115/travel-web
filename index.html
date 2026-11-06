@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
 <title>누리여행 - 여행 정보의 시작</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,8 +24,10 @@
 </div>
 
 <section class="hero">
+  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
   <div class="container">
-    <h1>이번엔 어디로 떠나볼까요?</h1>
+    <span class="eyebrow">✈️ 2026 겨울 시즌 특가 오픈</span>
+    <h1>이번엔 <em>어디로</em> 떠나볼까요?</h1>
     <p>국내·해외 여행지 정보부터 날씨, 환율까지 한 번에</p>
 
     <form class="search" onsubmit="event.preventDefault(); alert('검색 기능은 준비 중이에요!')">
@@ -208,7 +210,13 @@
   </div>
 </main>
 
-<footer>© 누리여행 Corp. All rights reserved.</footer>
+<footer>
+  <div class="container">
+    <a href="#" class="logo">누리<span>여행</span></a>
+    <nav class="foot-links"><a href="#">회사소개</a><a href="#">이용약관</a><a href="#"><b>개인정보처리방침</b></a><a href="#">고객센터</a></nav>
+    <p>© 누리여행 Corp. All rights reserved.</p>
+  </div>
+</footer>
 
 <script>
   // 여행지 탭 필터
@@ -226,7 +234,11 @@
   // 찜하기 토글
   document.querySelectorAll('.like').forEach(btn => {
     btn.addEventListener('click', () => {
-      btn.textContent = btn.textContent === '🤍' ? '❤️' : '🤍';
+      const liked = btn.classList.toggle('on');
+      btn.textContent = liked ? '❤️' : '🤍';
+      btn.classList.remove('pop');
+      void btn.offsetWidth; // 애니메이션 재시작
+      btn.classList.add('pop');
     });
   });
 
@@ -241,176 +253,6 @@
     if (end.value && end.value < start.value) end.value = start.value;
   });
 </script>
-=======
-<title>누리 - 시작 페이지</title>
-<style>
-  /* ===== 기본 (모바일 우선) ===== */
-  :root {
-    --brand: #12b886;
-    --brand-dark: #0ca678;
-    --text: #222;
-    --sub: #888;
-    --line: #e5e8eb;
-    --bg: #f5f6f7;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-    color: var(--text);
-    background: var(--bg);
-    font-size: 15px;
-    line-height: 1.5;
-  }
-  a { color: inherit; text-decoration: none; }
-  ul { list-style: none; }
-  .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 16px; }
-
-  /* 헤더 */
-  header { background: #fff; padding: 24px 0 20px; border-bottom: 1px solid var(--line); }
-  .search-area { display: flex; flex-direction: column; align-items: center; gap: 14px; }
-  .logo { font-size: 30px; font-weight: 900; color: var(--brand); letter-spacing: -1px; }
-  .search-box {
-    width: 100%; display: flex; height: 50px;
-    border: 2px solid var(--brand); border-radius: 25px; overflow: hidden; background: #fff;
-  }
-  .search-box input { flex: 1; min-width: 0; border: 0; outline: 0; padding: 0 18px; font-size: 16px; }
-  .search-box button {
-    width: 56px; border: 0; background: var(--brand); color: #fff; cursor: pointer; font-size: 18px;
-  }
-  .search-box button:hover { background: var(--brand-dark); }
-
-  /* 바로가기: 모바일 4칸 */
-  .shortcuts {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
-    margin-top: 18px;
-  }
-  .shortcuts a {
-    display: flex; flex-direction: column; align-items: center; gap: 4px;
-    font-size: 12px; padding: 6px 0; border-radius: 10px;
-  }
-  .shortcuts a:hover { background: var(--bg); }
-  .shortcuts .ico {
-    width: 44px; height: 44px; border-radius: 14px; border: 1px solid var(--line);
-    display: grid; place-items: center; font-size: 20px; background: #fff;
-  }
-
-  /* 메인: 모바일 1단 */
-  main { padding: 16px 0 32px; }
-  .layout { display: grid; grid-template-columns: 1fr; gap: 16px; }
-  .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
-  .card h2 { font-size: 16px; margin-bottom: 12px; }
-
-  /* 뉴스 리스트 */
-  .news { display: grid; grid-template-columns: 1fr; gap: 14px; }
-  .news li { display: flex; gap: 12px; align-items: center; }
-  .thumb { width: 80px; height: 60px; border-radius: 8px; flex-shrink: 0; }
-  .news h3 { font-size: 14px; font-weight: 600; }
-  .news p { font-size: 12px; color: var(--sub); }
-
-  /* 로그인 */
-  .login p { font-size: 13px; color: var(--sub); margin-bottom: 10px; }
-  .btn {
-    width: 100%; height: 48px; border: 0; border-radius: 8px;
-    background: var(--brand); color: #fff; font-size: 16px; font-weight: 700; cursor: pointer;
-  }
-  .btn:hover { background: var(--brand-dark); }
-
-  /* 인기 검색어 */
-  .rank li { display: flex; gap: 10px; padding: 6px 0; border-bottom: 1px dashed var(--line); }
-  .rank li:last-child { border: 0; }
-  .rank b { color: var(--brand); width: 16px; }
-
-  footer { text-align: center; font-size: 12px; color: var(--sub); padding: 24px 0; border-top: 1px solid var(--line); background: #fff; }
-
-  /* ===== 태블릿 (600px 이상) ===== */
-  @media (min-width: 600px) {
-    .search-area { flex-direction: row; justify-content: center; gap: 20px; }
-    .search-box { max-width: 560px; height: 54px; }
-    .shortcuts {
-      grid-template-columns: repeat(8, 1fr);
-      max-width: 640px; margin: 20px auto 0;
-    }
-    .news { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  /* ===== PC (960px 이상) ===== */
-  @media (min-width: 960px) {
-    header { padding: 36px 0 28px; }
-    .logo { font-size: 36px; }
-    .search-box { max-width: 620px; height: 58px; border-radius: 29px; }
-    .search-box input { font-size: 18px; }
-    .layout { grid-template-columns: 1fr 320px; gap: 24px; }
-    /* 우측 사이드바는 스크롤 시 따라오게 */
-    aside { position: sticky; top: 16px; align-self: start; display: grid; gap: 16px; }
-    .thumb { width: 100px; height: 70px; }
-  }
-
-  /* 모바일에서는 사이드바(로그인)를 위로 */
-  @media (max-width: 959px) {
-    aside { display: grid; gap: 16px; order: -1; }
-  }
-</style>
-</head>
-<body>
-
-<header>
-  <div class="container">
-    <div class="search-area">
-      <a href="#" class="logo">누리</a>
-      <form class="search-box" onsubmit="event.preventDefault()">
-        <input type="text" placeholder="검색어를 입력해 주세요.">
-        <button type="submit" aria-label="검색">🔍</button>
-      </form>
-    </div>
-
-    <nav class="shortcuts">
-      <a href="#"><span class="ico">✉️</span>메일</a>
-      <a href="#"><span class="ico">☕</span>카페</a>
-      <a href="#"><span class="ico">📝</span>블로그</a>
-      <a href="#"><span class="ico">🛍️</span>쇼핑</a>
-      <a href="#"><span class="ico">📰</span>뉴스</a>
-      <a href="#"><span class="ico">📈</span>증권</a>
-      <a href="#"><span class="ico">🗺️</span>지도</a>
-      <a href="#"><span class="ico">📚</span>웹툰</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <div class="container layout">
-    <section class="card">
-      <h2>오늘의 뉴스</h2>
-      <ul class="news">
-        <li><div class="thumb" style="background:linear-gradient(135deg,#74c0fc,#4dabf7)"></div><div><h3><a href="#">올겨울 첫 한파 예보, 주말 기온 뚝</a></h3><p>누리뉴스 · 10분 전</p></div></li>
-        <li><div class="thumb" style="background:linear-gradient(135deg,#ffd43b,#fab005)"></div><div><h3><a href="#">지하철 신규 노선 시범 운행 시작</a></h3><p>시티데일리 · 25분 전</p></div></li>
-        <li><div class="thumb" style="background:linear-gradient(135deg,#b2f2bb,#69db7c)"></div><div><h3><a href="#">도심 공원 확대, 내년 상반기 착공</a></h3><p>그린타임즈 · 1시간 전</p></div></li>
-        <li><div class="thumb" style="background:linear-gradient(135deg,#d0bfff,#9775fa)"></div><div><h3><a href="#">AI 교육 프로그램 전국 학교로 확대</a></h3><p>에듀포스트 · 2시간 전</p></div></li>
-        <li><div class="thumb" style="background:linear-gradient(135deg,#ffc9c9,#ff8787)"></div><div><h3><a href="#">연말 시상식 후보 라인업 공개</a></h3><p>엔터온 · 3시간 전</p></div></li>
-        <li><div class="thumb" style="background:linear-gradient(135deg,#ffe8cc,#ffa94d)"></div><div><h3><a href="#">소비자물가 상승률 석 달 연속 둔화</a></h3><p>머니투나우 · 3시간 전</p></div></li>
-      </ul>
-    </section>
-
-    <aside>
-      <div class="card login">
-        <p>더 편리하게 이용하려면 로그인하세요.</p>
-        <button class="btn" type="button">누리 로그인</button>
-      </div>
-      <div class="card">
-        <h2>인기 검색어</h2>
-        <ol class="rank">
-          <li><b>1</b><a href="#">첫눈 예보</a></li>
-          <li><b>2</b><a href="#">연말 여행지 추천</a></li>
-          <li><b>3</b><a href="#">김장 김치 레시피</a></li>
-          <li><b>4</b><a href="#">겨울 패딩 추천</a></li>
-          <li><b>5</b><a href="#">신규 지하철 노선</a></li>
-        </ol>
-      </div>
-    </aside>
-  </div>
-</main>
-
-<footer>© 누리 Corp. All rights reserved.</footer>
->>>>>>> 80e1b4712aebf336b12a0b3e274687d52bd050ee
 
 </body>
 </html>
