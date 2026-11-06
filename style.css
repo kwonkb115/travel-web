@@ -1,0 +1,163 @@
+<<<<<<< HEAD
+/* ===== 기본 (모바일 우선) ===== */
+:root {
+  --brand: #12b886;
+  --brand-dark: #0ca678;
+  --accent: #ff922b;
+  --text: #222;
+  --sub: #868e96;
+  --line: #e5e8eb;
+  --bg: #f5f6f7;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  font-size: 15px;
+  line-height: 1.5;
+}
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button { font: inherit; }
+.container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+/* 상단 바 */
+.topbar { background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; }
+.topbar .container { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.logo { font-size: 22px; font-weight: 900; color: var(--brand); letter-spacing: -1px; }
+.logo span { color: var(--accent); }
+.gnb { display: none; gap: 24px; font-weight: 600; font-size: 14px; }
+.gnb a:hover { color: var(--brand); }
+.login-btn {
+  border: 1px solid var(--brand); color: var(--brand); background: #fff;
+  padding: 6px 14px; border-radius: 18px; font-size: 13px; font-weight: 700; cursor: pointer;
+}
+.login-btn:hover { background: var(--brand); color: #fff; }
+
+/* 히어로 + 검색 */
+.hero {
+  background: linear-gradient(135deg, #0ca678 0%, #15aabf 55%, #4dabf7 100%);
+  color: #fff; padding: 36px 0 28px;
+}
+.hero h1 { font-size: 24px; line-height: 1.35; letter-spacing: -0.5px; }
+.hero p { margin-top: 6px; opacity: .9; font-size: 14px; }
+.search {
+  margin-top: 20px; background: #fff; border-radius: 16px; padding: 12px;
+  display: grid; grid-template-columns: 1fr; gap: 8px; color: var(--text);
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+.field { display: flex; flex-direction: column; padding: 6px 10px; border-radius: 10px; background: var(--bg); }
+.field label { font-size: 11px; color: var(--sub); font-weight: 600; }
+.field input, .field select { border: 0; outline: 0; background: transparent; font-size: 15px; padding: 2px 0; color: var(--text); }
+.search button {
+  height: 48px; border: 0; border-radius: 10px; background: var(--accent); color: #fff;
+  font-size: 16px; font-weight: 700; cursor: pointer;
+}
+.search button:hover { background: #fd7e14; }
+.tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; }
+.tags a { background: rgba(255,255,255,.2); padding: 4px 10px; border-radius: 14px; }
+.tags a:hover { background: rgba(255,255,255,.35); }
+
+/* 카테고리 바로가기 */
+.shortcuts {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+  background: #fff; border-radius: 12px; border: 1px solid var(--line);
+  padding: 14px 8px; margin-top: 16px;
+}
+.shortcuts a { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 12px; padding: 4px 0; border-radius: 10px; }
+.shortcuts a:hover { background: var(--bg); }
+.shortcuts .ico { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; font-size: 22px; background: #e6fcf5; }
+
+/* 메인 레이아웃 */
+main { padding: 0 0 32px; }
+.layout { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 16px; }
+.content { display: grid; gap: 16px; min-width: 0; }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+.card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.card h2 { font-size: 17px; }
+.more { font-size: 12px; color: var(--sub); }
+
+/* 탭 */
+.tabs { display: flex; gap: 6px; margin-bottom: 14px; overflow-x: auto; }
+.tabs button {
+  flex-shrink: 0; border: 1px solid var(--line); background: #fff; padding: 6px 14px;
+  border-radius: 18px; font-size: 13px; cursor: pointer; color: var(--sub);
+}
+.tabs button.on { background: var(--brand); border-color: var(--brand); color: #fff; font-weight: 700; }
+
+/* 여행지 카드 */
+.places { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.place { position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #fff; }
+.place .img { height: 110px; display: grid; place-items: center; font-size: 42px; }
+.place .info { padding: 10px 12px 12px; }
+.place h3 { font-size: 15px; }
+.place .meta { font-size: 12px; color: var(--sub); }
+.place .price { margin-top: 4px; font-size: 13px; font-weight: 700; color: var(--brand-dark); }
+.place .badge {
+  position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,.55); color: #fff;
+  font-size: 11px; padding: 2px 8px; border-radius: 10px;
+}
+.like {
+  position: absolute; top: 6px; right: 6px; width: 30px; height: 30px; border-radius: 50%;
+  border: 0; background: rgba(255,255,255,.9); cursor: pointer; font-size: 15px;
+}
+.place.hidden { display: none; }
+
+/* 테마 여행 */
+.themes { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.theme { display: flex; align-items: flex-end; height: 100px; padding: 14px; border-radius: 12px; color: #fff; }
+.theme b { font-size: 16px; display: block; }
+.theme small { opacity: .9; }
+
+/* 여행 매거진 */
+.mag { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.mag li { display: flex; gap: 12px; align-items: center; }
+.thumb { width: 80px; height: 60px; border-radius: 8px; flex-shrink: 0; display: grid; place-items: center; font-size: 24px; }
+.mag h3 { font-size: 14px; font-weight: 600; }
+.mag p { font-size: 12px; color: var(--sub); }
+
+/* 사이드바 */
+aside { display: grid; gap: 16px; align-content: start; }
+.weather li { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px dashed var(--line); font-size: 14px; }
+.weather li:last-child { border: 0; }
+.weather .t { font-weight: 700; }
+.rate li { display: flex; justify-content: space-between; padding: 6px 0; font-size: 14px; }
+.rate .up { color: #e03131; font-size: 12px; }
+.rate .down { color: #1971c2; font-size: 12px; }
+.rank li { display: flex; gap: 10px; padding: 6px 0; border-bottom: 1px dashed var(--line); font-size: 14px; }
+.rank li:last-child { border: 0; }
+.rank b { color: var(--brand); width: 16px; }
+.notice { font-size: 12px; color: var(--sub); margin-top: 8px; }
+
+footer { text-align: center; font-size: 12px; color: var(--sub); padding: 24px 0; border-top: 1px solid var(--line); background: #fff; }
+
+/* ===== 태블릿 (600px 이상) ===== */
+@media (min-width: 600px) {
+  .hero { padding: 48px 0 36px; }
+  .hero h1 { font-size: 30px; }
+  .search { grid-template-columns: 2fr 1fr 1fr 1fr; align-items: stretch; }
+  .search button { grid-column: 1 / -1; }
+  .shortcuts { grid-template-columns: repeat(8, 1fr); }
+  .places { grid-template-columns: repeat(3, 1fr); }
+  .themes { grid-template-columns: repeat(3, 1fr); }
+  .mag { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== PC (960px 이상) ===== */
+@media (min-width: 960px) {
+  .gnb { display: flex; }
+  .hero { padding: 64px 0 48px; }
+  .hero h1 { font-size: 36px; }
+  .search { grid-template-columns: 2fr 1fr 1fr 1fr 120px; }
+  .search button { grid-column: auto; height: auto; }
+  .layout { grid-template-columns: 1fr 300px; gap: 24px; }
+  aside { position: sticky; top: 72px; align-self: start; }
+  .place .img { height: 130px; }
+  .thumb { width: 100px; height: 70px; }
+}
+=======
+h1 {
+  color: red;
+}
+>>>>>>> 80e1b4712aebf336b12a0b3e274687d52bd050ee

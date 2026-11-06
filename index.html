@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
+<title>누리여행 - 여행 정보의 시작</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <a href="#" class="logo">누리<span>여행</span></a>
+    <nav class="gnb">
+      <a href="#places">여행지</a>
+      <a href="#themes">테마여행</a>
+      <a href="#mag">매거진</a>
+      <a href="#">숙소</a>
+      <a href="#">항공권</a>
+    </nav>
+    <button class="login-btn" type="button">로그인</button>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <h1>이번엔 어디로 떠나볼까요?</h1>
+    <p>국내·해외 여행지 정보부터 날씨, 환율까지 한 번에</p>
+
+    <form class="search" onsubmit="event.preventDefault(); alert('검색 기능은 준비 중이에요!')">
+      <div class="field">
+        <label for="dest">여행지</label>
+        <input id="dest" type="text" placeholder="도시, 지역, 명소 검색">
+      </div>
+      <div class="field">
+        <label for="start">가는 날</label>
+        <input id="start" type="date">
+      </div>
+      <div class="field">
+        <label for="end">오는 날</label>
+        <input id="end" type="date">
+      </div>
+      <div class="field">
+        <label for="people">인원</label>
+        <select id="people">
+          <option>성인 1명</option>
+          <option selected>성인 2명</option>
+          <option>성인 3명</option>
+          <option>성인 4명 이상</option>
+        </select>
+      </div>
+      <button type="submit">🔍 검색</button>
+    </form>
+
+    <div class="tags">
+      <a href="#">#제주 겨울여행</a>
+      <a href="#">#오사카 맛집</a>
+      <a href="#">#강릉 바다</a>
+      <a href="#">#다낭 리조트</a>
+      <a href="#">#연말 해돋이</a>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+    <nav class="shortcuts">
+      <a href="#"><span class="ico">🏨</span>숙소</a>
+      <a href="#"><span class="ico">✈️</span>항공권</a>
+      <a href="#"><span class="ico">🚗</span>렌터카</a>
+      <a href="#"><span class="ico">🎟️</span>투어·티켓</a>
+      <a href="#"><span class="ico">🍜</span>맛집</a>
+      <a href="#"><span class="ico">🚆</span>기차</a>
+      <a href="#"><span class="ico">🗺️</span>지도</a>
+      <a href="#"><span class="ico">🧳</span>패키지</a>
+    </nav>
+
+    <div class="layout">
+      <div class="content">
+
+        <!-- 인기 여행지 -->
+        <section class="card" id="places">
+          <div class="card-head">
+            <h2>🔥 지금 뜨는 여행지</h2>
+            <a href="#" class="more">전체보기 ›</a>
+          </div>
+          <div class="tabs">
+            <button type="button" class="on" data-filter="all">전체</button>
+            <button type="button" data-filter="domestic">국내</button>
+            <button type="button" data-filter="asia">아시아</button>
+            <button type="button" data-filter="europe">유럽</button>
+          </div>
+          <div class="places">
+            <article class="place" data-region="domestic">
+              <div class="img" style="background:linear-gradient(135deg,#ffd8a8,#ff922b)">🍊</div>
+              <span class="badge">국내</span><button class="like" type="button" aria-label="찜하기">🤍</button>
+              <div class="info"><h3>제주도</h3><p class="meta">★ 4.8 · 리뷰 12,340</p><p class="price">항공+숙소 19만원~</p></div>
+            </article>
+            <article class="place" data-region="domestic">
+              <div class="img" style="background:linear-gradient(135deg,#a5d8ff,#339af0)">🌊</div>
+              <span class="badge">국내</span><button class="like" type="button" aria-label="찜하기">🤍</button>
+              <div class="info"><h3>강릉</h3><p class="meta">★ 4.7 · 리뷰 8,102</p><p class="price">KTX+숙소 12만원~</p></div>
+            </article>
+            <article class="place" data-region="domestic">
+              <div class="img" style="background:linear-gradient(135deg,#ffc9c9,#f06595)">🌉</div>
+              <span class="badge">국내</span><button class="like" type="button" aria-label="찜하기">🤍</button>
+              <div class="info"><h3>부산</h3><p class="meta">★ 4.7 · 리뷰 15,021</p><p class="price">KTX+숙소 14만원~</p></div>
+            </article>
+            <article class="place" data-region="asia">
+              <div class="img" style="background:linear-gradient(135deg,#ffe3e3,#fa5252)">🏯</div>
+              <span class="badge">일본</span><button class="like" type="button" aria-label="찜하기">🤍</button>
+              <div class="info"><h3>오사카</h3><p class="meta">★ 4.8 · 리뷰 21,450</p><p class="price">항공+숙소 39만원~</p></div>
+            </article>
+            <article class="place" data-region="asia">
+              <div class="img" style="background:linear-gradient(135deg,#c3fae8,#20c997)">🏝️</div>
+              <span class="badge">베트남</span><button class="like" type="button" aria-label="찜하기">🤍</button>
+              <div class="info"><h3>다낭</h3><p class="meta">★ 4.6 · 리뷰 18,870</p><p class="price">항공+숙소 52만원~</p></div>
+            </article>
+            <article class="place" data-region="asia">
+              <div class="img" style="background:linear-gradient(135deg,#fff3bf,#fcc419)">🛕</div>
+              <span class="badge">태국</span><button class="like" type="button" aria-label="찜하기">🤍</button>
+              <div class="info"><h3>방콕</h3><p class="meta">★ 4.6 · 리뷰 13,200</p><p class="price">항공+숙소 48만원~</p></div>
+            </article>
+            <article class="place" data-region="europe">
+              <div class="img" style="background:linear-gradient(135deg,#d0bfff,#7950f2)">🗼</div>
+              <span class="badge">프랑스</span><button class="like" type="button" aria-label="찜하기">🤍</button>
+              <div class="info"><h3>파리</h3><p class="meta">★ 4.7 · 리뷰 9,870</p><p class="price">항공+숙소 189만원~</p></div>
+            </article>
+            <article class="place" data-region="europe">
+              <div class="img" style="background:linear-gradient(135deg,#ffec99,#f76707)">🏛️</div>
+              <span class="badge">이탈리아</span><button class="like" type="button" aria-label="찜하기">🤍</button>
+              <div class="info"><h3>로마</h3><p class="meta">★ 4.7 · 리뷰 7,450</p><p class="price">항공+숙소 179만원~</p></div>
+            </article>
+            <article class="place" data-region="europe">
+              <div class="img" style="background:linear-gradient(135deg,#e7f5ff,#74c0fc)">🏔️</div>
+              <span class="badge">스위스</span><button class="like" type="button" aria-label="찜하기">🤍</button>
+              <div class="info"><h3>인터라켄</h3><p class="meta">★ 4.9 · 리뷰 4,320</p><p class="price">항공+숙소 230만원~</p></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 테마 여행 -->
+        <section class="card" id="themes">
+          <div class="card-head">
+            <h2>✨ 테마별 추천 여행</h2>
+            <a href="#" class="more">더보기 ›</a>
+          </div>
+          <div class="themes">
+            <a href="#" class="theme" style="background:linear-gradient(160deg,#74c0fc,#1864ab)"><div><b>❄️ 겨울 눈꽃 여행</b><small>평창 · 삿포로 · 하얼빈</small></div></a>
+            <a href="#" class="theme" style="background:linear-gradient(160deg,#ffa94d,#d9480f)"><div><b>♨️ 따뜻한 온천 힐링</b><small>벳푸 · 유후인 · 아산</small></div></a>
+            <a href="#" class="theme" style="background:linear-gradient(160deg,#63e6be,#087f5b)"><div><b>👨‍👩‍👧 아이와 함께</b><small>키즈풀빌라 · 테마파크</small></div></a>
+          </div>
+        </section>
+
+        <!-- 여행 매거진 -->
+        <section class="card" id="mag">
+          <div class="card-head">
+            <h2>📖 여행 매거진</h2>
+            <a href="#" class="more">더보기 ›</a>
+          </div>
+          <ul class="mag">
+            <li><div class="thumb" style="background:#e7f5ff">🎄</div><div><h3><a href="#">유럽 크리스마스 마켓 BEST 5</a></h3><p>누리에디터 · 조회 3.2만</p></div></li>
+            <li><div class="thumb" style="background:#fff4e6">🌅</div><div><h3><a href="#">2027 새해 해돋이 명소 총정리</a></h3><p>누리에디터 · 조회 2.8만</p></div></li>
+            <li><div class="thumb" style="background:#ebfbee">💸</div><div><h3><a href="#">항공권 싸게 사는 타이밍 꿀팁</a></h3><p>트래블랩 · 조회 5.1만</p></div></li>
+            <li><div class="thumb" style="background:#fff0f6">🍣</div><div><h3><a href="#">현지인이 추천하는 도쿄 골목 맛집</a></h3><p>먹방여행 · 조회 1.9만</p></div></li>
+            <li><div class="thumb" style="background:#f3f0ff">🧳</div><div><h3><a href="#">해외여행 짐 싸기 체크리스트</a></h3><p>트래블랩 · 조회 4.4만</p></div></li>
+            <li><div class="thumb" style="background:#e3fafc">🛂</div><div><h3><a href="#">출국 전 꼭 확인할 입국 서류</a></h3><p>누리에디터 · 조회 2.2만</p></div></li>
+          </ul>
+        </section>
+      </div>
+
+      <aside>
+        <div class="card">
+          <div class="card-head"><h2>🌤️ 여행지 날씨</h2></div>
+          <ul class="weather">
+            <li><span>☀️ 제주</span><span class="t">14°</span></li>
+            <li><span>⛅ 오사카</span><span class="t">13°</span></li>
+            <li><span>🌧️ 다낭</span><span class="t">26°</span></li>
+            <li><span>☀️ 방콕</span><span class="t">31°</span></li>
+            <li><span>☁️ 파리</span><span class="t">8°</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h2>💱 오늘의 환율</h2></div>
+          <ul class="rate">
+            <li><span>🇺🇸 USD</span><span>1,385원 <span class="up">▲3.2</span></span></li>
+            <li><span>🇯🇵 JPY(100)</span><span>912원 <span class="down">▼1.5</span></span></li>
+            <li><span>🇪🇺 EUR</span><span>1,498원 <span class="up">▲4.1</span></span></li>
+            <li><span>🇻🇳 VND(100)</span><span>5.4원 <span class="down">▼0.1</span></span></li>
+          </ul>
+          <p class="notice">* 예시 데이터입니다.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h2>🏆 인기 검색어</h2></div>
+          <ol class="rank">
+            <li><b>1</b><a href="#">삿포로 눈축제</a></li>
+            <li><b>2</b><a href="#">제주 감귤체험</a></li>
+            <li><b>3</b><a href="#">연말 해돋이 명소</a></li>
+            <li><b>4</b><a href="#">다낭 풀빌라</a></li>
+            <li><b>5</b><a href="#">유럽 크리스마스 마켓</a></li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer>© 누리여행 Corp. All rights reserved.</footer>
+
+<script>
+  // 여행지 탭 필터
+  const tabs = document.querySelectorAll('.tabs button');
+  const places = document.querySelectorAll('.place');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('on'));
+      tab.classList.add('on');
+      const f = tab.dataset.filter;
+      places.forEach(p => p.classList.toggle('hidden', f !== 'all' && p.dataset.region !== f));
+    });
+  });
+
+  // 찜하기 토글
+  document.querySelectorAll('.like').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.textContent = btn.textContent === '🤍' ? '❤️' : '🤍';
+    });
+  });
+
+  // 날짜: 오늘 이전은 선택 불가, 오는 날은 가는 날 이후로
+  const start = document.getElementById('start');
+  const end = document.getElementById('end');
+  const today = new Date().toISOString().slice(0, 10);
+  start.min = today;
+  end.min = today;
+  start.addEventListener('change', () => {
+    end.min = start.value || today;
+    if (end.value && end.value < start.value) end.value = start.value;
+  });
+</script>
+=======
+<title>누리 - 시작 페이지</title>
+<style>
+  /* ===== 기본 (모바일 우선) ===== */
+  :root {
+    --brand: #12b886;
+    --brand-dark: #0ca678;
+    --text: #222;
+    --sub: #888;
+    --line: #e5e8eb;
+    --bg: #f5f6f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+  /* 헤더 */
+  header { background: #fff; padding: 24px 0 20px; border-bottom: 1px solid var(--line); }
+  .search-area { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .logo { font-size: 30px; font-weight: 900; color: var(--brand); letter-spacing: -1px; }
+  .search-box {
+    width: 100%; display: flex; height: 50px;
+    border: 2px solid var(--brand); border-radius: 25px; overflow: hidden; background: #fff;
+  }
+  .search-box input { flex: 1; min-width: 0; border: 0; outline: 0; padding: 0 18px; font-size: 16px; }
+  .search-box button {
+    width: 56px; border: 0; background: var(--brand); color: #fff; cursor: pointer; font-size: 18px;
+  }
+  .search-box button:hover { background: var(--brand-dark); }
+
+  /* 바로가기: 모바일 4칸 */
+  .shortcuts {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+    margin-top: 18px;
+  }
+  .shortcuts a {
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+    font-size: 12px; padding: 6px 0; border-radius: 10px;
+  }
+  .shortcuts a:hover { background: var(--bg); }
+  .shortcuts .ico {
+    width: 44px; height: 44px; border-radius: 14px; border: 1px solid var(--line);
+    display: grid; place-items: center; font-size: 20px; background: #fff;
+  }
+
+  /* 메인: 모바일 1단 */
+  main { padding: 16px 0 32px; }
+  .layout { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+  .card h2 { font-size: 16px; margin-bottom: 12px; }
+
+  /* 뉴스 리스트 */
+  .news { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .news li { display: flex; gap: 12px; align-items: center; }
+  .thumb { width: 80px; height: 60px; border-radius: 8px; flex-shrink: 0; }
+  .news h3 { font-size: 14px; font-weight: 600; }
+  .news p { font-size: 12px; color: var(--sub); }
+
+  /* 로그인 */
+  .login p { font-size: 13px; color: var(--sub); margin-bottom: 10px; }
+  .btn {
+    width: 100%; height: 48px; border: 0; border-radius: 8px;
+    background: var(--brand); color: #fff; font-size: 16px; font-weight: 700; cursor: pointer;
+  }
+  .btn:hover { background: var(--brand-dark); }
+
+  /* 인기 검색어 */
+  .rank li { display: flex; gap: 10px; padding: 6px 0; border-bottom: 1px dashed var(--line); }
+  .rank li:last-child { border: 0; }
+  .rank b { color: var(--brand); width: 16px; }
+
+  footer { text-align: center; font-size: 12px; color: var(--sub); padding: 24px 0; border-top: 1px solid var(--line); background: #fff; }
+
+  /* ===== 태블릿 (600px 이상) ===== */
+  @media (min-width: 600px) {
+    .search-area { flex-direction: row; justify-content: center; gap: 20px; }
+    .search-box { max-width: 560px; height: 54px; }
+    .shortcuts {
+      grid-template-columns: repeat(8, 1fr);
+      max-width: 640px; margin: 20px auto 0;
+    }
+    .news { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ===== PC (960px 이상) ===== */
+  @media (min-width: 960px) {
+    header { padding: 36px 0 28px; }
+    .logo { font-size: 36px; }
+    .search-box { max-width: 620px; height: 58px; border-radius: 29px; }
+    .search-box input { font-size: 18px; }
+    .layout { grid-template-columns: 1fr 320px; gap: 24px; }
+    /* 우측 사이드바는 스크롤 시 따라오게 */
+    aside { position: sticky; top: 16px; align-self: start; display: grid; gap: 16px; }
+    .thumb { width: 100px; height: 70px; }
+  }
+
+  /* 모바일에서는 사이드바(로그인)를 위로 */
+  @media (max-width: 959px) {
+    aside { display: grid; gap: 16px; order: -1; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="search-area">
+      <a href="#" class="logo">누리</a>
+      <form class="search-box" onsubmit="event.preventDefault()">
+        <input type="text" placeholder="검색어를 입력해 주세요.">
+        <button type="submit" aria-label="검색">🔍</button>
+      </form>
+    </div>
+
+    <nav class="shortcuts">
+      <a href="#"><span class="ico">✉️</span>메일</a>
+      <a href="#"><span class="ico">☕</span>카페</a>
+      <a href="#"><span class="ico">📝</span>블로그</a>
+      <a href="#"><span class="ico">🛍️</span>쇼핑</a>
+      <a href="#"><span class="ico">📰</span>뉴스</a>
+      <a href="#"><span class="ico">📈</span>증권</a>
+      <a href="#"><span class="ico">🗺️</span>지도</a>
+      <a href="#"><span class="ico">📚</span>웹툰</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container layout">
+    <section class="card">
+      <h2>오늘의 뉴스</h2>
+      <ul class="news">
+        <li><div class="thumb" style="background:linear-gradient(135deg,#74c0fc,#4dabf7)"></div><div><h3><a href="#">올겨울 첫 한파 예보, 주말 기온 뚝</a></h3><p>누리뉴스 · 10분 전</p></div></li>
+        <li><div class="thumb" style="background:linear-gradient(135deg,#ffd43b,#fab005)"></div><div><h3><a href="#">지하철 신규 노선 시범 운행 시작</a></h3><p>시티데일리 · 25분 전</p></div></li>
+        <li><div class="thumb" style="background:linear-gradient(135deg,#b2f2bb,#69db7c)"></div><div><h3><a href="#">도심 공원 확대, 내년 상반기 착공</a></h3><p>그린타임즈 · 1시간 전</p></div></li>
+        <li><div class="thumb" style="background:linear-gradient(135deg,#d0bfff,#9775fa)"></div><div><h3><a href="#">AI 교육 프로그램 전국 학교로 확대</a></h3><p>에듀포스트 · 2시간 전</p></div></li>
+        <li><div class="thumb" style="background:linear-gradient(135deg,#ffc9c9,#ff8787)"></div><div><h3><a href="#">연말 시상식 후보 라인업 공개</a></h3><p>엔터온 · 3시간 전</p></div></li>
+        <li><div class="thumb" style="background:linear-gradient(135deg,#ffe8cc,#ffa94d)"></div><div><h3><a href="#">소비자물가 상승률 석 달 연속 둔화</a></h3><p>머니투나우 · 3시간 전</p></div></li>
+      </ul>
+    </section>
+
+    <aside>
+      <div class="card login">
+        <p>더 편리하게 이용하려면 로그인하세요.</p>
+        <button class="btn" type="button">누리 로그인</button>
+      </div>
+      <div class="card">
+        <h2>인기 검색어</h2>
+        <ol class="rank">
+          <li><b>1</b><a href="#">첫눈 예보</a></li>
+          <li><b>2</b><a href="#">연말 여행지 추천</a></li>
+          <li><b>3</b><a href="#">김장 김치 레시피</a></li>
+          <li><b>4</b><a href="#">겨울 패딩 추천</a></li>
+          <li><b>5</b><a href="#">신규 지하철 노선</a></li>
+        </ol>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>© 누리 Corp. All rights reserved.</footer>
+>>>>>>> 80e1b4712aebf336b12a0b3e274687d52bd050ee
+
+</body>
+</html>
