@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>로그인 - 누리여행</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+
+<span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+
+<main class="auth">
+  <a href="index.html" class="logo">누리<span>여행</span></a>
+  <p class="auth-sub">로그인하고 나만의 여행을 계획해 보세요 ✈️</p>
+
+  <div class="auth-card">
+    <form id="loginForm" novalidate>
+      <div class="field">
+        <label for="userId">아이디 또는 이메일</label>
+        <input id="userId" type="text" autocomplete="username" placeholder="nuri@travel.com">
+      </div>
+      <div class="field pw">
+        <label for="userPw">비밀번호</label>
+        <input id="userPw" type="password" autocomplete="current-password" placeholder="비밀번호 입력">
+        <button type="button" class="toggle-pw" aria-label="비밀번호 보기">👁️</button>
+      </div>
+      <p class="error" id="loginError" role="alert"></p>
+
+      <div class="auth-row">
+        <label class="check"><input type="checkbox"> 로그인 상태 유지</label>
+        <a href="#">비밀번호 찾기</a>
+      </div>
+
+      <button type="submit" class="auth-submit">로그인</button>
+    </form>
+
+    <div class="divider"><span>또는</span></div>
+
+    <div class="social">
+      <button type="button" class="kakao">💬 카카오로 시작하기</button>
+      <button type="button" class="naver"><b>N</b> 네이버로 시작하기</button>
+      <button type="button" class="google"><b>G</b> Google로 시작하기</button>
+    </div>
+
+    <p class="auth-foot">아직 회원이 아니신가요? <a href="#">회원가입</a></p>
+  </div>
+
+  <a href="index.html" class="back">‹ 홈으로 돌아가기</a>
+</main>
+
+<script>
+  // 비밀번호 보기/숨기기
+  const pw = document.getElementById('userPw');
+  document.querySelector('.toggle-pw').addEventListener('click', e => {
+    const show = pw.type === 'password';
+    pw.type = show ? 'text' : 'password';
+    e.currentTarget.textContent = show ? '🙈' : '👁️';
+  });
+
+  // 간단한 입력 확인 (실제 로그인 기능은 아직 없음)
+  document.getElementById('loginForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const id = document.getElementById('userId').value.trim();
+    const err = document.getElementById('loginError');
+    if (!id) { err.textContent = '아이디를 입력해 주세요.'; return; }
+    if (!pw.value) { err.textContent = '비밀번호를 입력해 주세요.'; return; }
+    err.textContent = '';
+    alert(id + '님, 환영합니다! (로그인 기능은 준비 중이에요)');
+    location.href = 'index.html';
+  });
+
+  document.querySelectorAll('.social button').forEach(b =>
+    b.addEventListener('click', () => alert('소셜 로그인은 준비 중이에요!')));
+</script>
+</body>
+</html>
